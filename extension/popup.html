@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoatMeet</title><link rel="stylesheet" href="recorder.css"><script type="module" src="popup.mjs"></script>
+<body class="popup"><main>
+  <header><img class="logo" src="icons/goat128.png" alt="" width="52" height="52"><div><h1>GoatMeet</h1><p>Record this tab</p></div></header>
+  <div class="eyebrow" id="state">CHECKING</div>
+  <h2 id="meeting">This tab</h2>
+  <p id="status" role="status" aria-live="polite">Checking recording settings…</p>
+  <p id="mic-permission" class="file-detail"></p>
+  <div class="actions">
+    <button id="start" disabled>Start recording</button>
+    <button id="stop" class="danger" hidden>Stop recording</button>
+    <button id="mute" class="mic-toggle" hidden aria-pressed="false" aria-label="Mute recording mic" title="Mute recording mic">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="9" y="3" width="6" height="10" rx="3" fill="currentColor"></rect>
+        <path d="M6 11a6 6 0 0 0 12 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <path d="M12 17v3M9.5 20.5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        <line class="slash" x1="5" y1="4" x2="19" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </button>
+  </div>
+  <div class="stats"><span id="elapsed">00:00:00</span><span id="size">0.0 MB</span></div>
+  <p class="note" id="mic-note">Your microphone records on its own, separate from the page’s mute controls.</p>
+  <p class="file-detail" id="folder">Default: Videos / goatmeet</p>
+  <p class="file-detail" id="filename"></p>
+  <p class="file-detail" id="checkpoint"></p>
+  <button id="settings" class="secondary">Recording settings</button>
+</main></body></html>

@@ -1,0 +1,37 @@
+# Build output
+dist/
+
+# Recordings must never enter the repository
+*.mp4
+*.webm
+
+# Tooling
+node_modules/
+.playwright-mcp/
+*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and private configuration — never commit
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+secrets.json
+secrets.*
+credentials.json
+credentials.*
+.netrc
+
+# Local agent and tool state
+.claude/
+.codex/
+.mcp.json
+scratchpad/

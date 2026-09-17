@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>GoatMeet recording check</title>
+<link rel="stylesheet" href="../../extension/recorder.css">
+<script type="module" src="browser.mjs"></script>
+<main>
+  <h1>GoatMeet recording check</h1>
+  <p>This check records a generated picture and two generated tones for three seconds.</p>
+  <p>It does not access your microphone or any meeting.</p>
+  <button id="run">Run recording check</button>
+  <p id="result" role="status">Ready</p>
+  <canvas id="picture" width="640" height="360"></canvas>
+  <video id="playback" controls width="640"></video>
+</main>
+</html>

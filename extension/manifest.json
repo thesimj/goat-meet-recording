@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "GoatMeet",
+  "version": "0.3.5",
+  "description": "Record any tab and your microphone to a local H.264 MP4. No account, no server, no upload.",
+  "homepage_url": "https://github.com/thesimj/goat-meet-recording",
+  "minimum_chrome_version": "126",
+  "permissions": ["activeTab", "tabCapture", "offscreen"],
+  "icons": {
+    "16": "icons/goat16.png",
+    "32": "icons/goat32.png",
+    "48": "icons/goat48.png",
+    "128": "icons/goat128.png"
+  },
+  "action": {
+    "default_title": "GoatMeet - checking recording status",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/goat16.png", "32": "icons/goat32.png" }
+  },
+  "options_page": "setup.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
+  }
+}
