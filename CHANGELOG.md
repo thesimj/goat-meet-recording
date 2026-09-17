@@ -5,6 +5,11 @@ Versions follow the `version` field in `extension/manifest.json`.
 
 ## [Unreleased]
 
+### Changed
+
+- Generalized the documentation to recording any tab in Chrome, not only a meeting tab.
+- Moved the README banner to `images/` and removed the `docs/` directory, including the store listing draft and the testing guide.
+
 ## [0.3.5] - 2026-09-17
 
 ### Changed
@@ -49,7 +54,7 @@ First public source release, prepared for the Chrome Web Store.
 - GitHub Actions workflow: tests on Node 22 and 24, package build, and release upload on `v*` tags.
 - `PRIVACY.md`, `CONTRIBUTING.md`, `SECURITY.md`, a store listing draft, and a testing guide.
 - A recording consent note in the README and the privacy policy.
-- A README hero illustration in `docs/images/`, generated with GPT Image 2.5 from the extension’s icon and palette.
+- A README hero illustration in `images/`, generated with GPT Image 2.5 from the extension’s icon and palette.
 
 ### Fixed
 

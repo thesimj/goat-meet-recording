@@ -27,7 +27,7 @@ npm run package
 
 `npm test` runs the Node tests. They load each page script into a `vm` context with fake browser objects, so they run in under a second and need no Chrome.
 For changes to pages or the service worker, also run `npm run e2e`. It starts a real Chrome with the extension loaded.
-For changes to capture, encoding, or file writing, also run the browser check described in [docs/testing.md](docs/testing.md).
+For changes to capture, encoding, or file writing, also open `tests/browser/browser.html` in Chrome and run the encoder check.
 
 ## Layout
 

@@ -1,8 +1,8 @@
 # GoatMeet
 
-![GoatMeet records a meeting tab to a local MP4](docs/images/hero.png)
+![GoatMeet records any tab to a local MP4](images/hero.png)
 
-**Record any meeting tab to an MP4 on your own disk. No account, no cloud, no upload.**
+**Record any tab in your Chrome browser to an MP4 on your own disk. No account, no cloud, no upload.**
 
 GoatMeet is a Chrome extension. Click its icon on any tab, press Start, and the tab records.
 It captures the tab’s video and audio together with your microphone, encodes H.264/AAC with Chrome’s own encoder,
@@ -10,9 +10,9 @@ and writes the file to a folder you choose while the tab plays. Press Stop and t
 It recognizes Google Meet, Microsoft Teams, and Zoom to name the file, and records any other tab just the same.
 
 - **Local only.** The extension’s Content Security Policy forbids network requests. Nothing ever leaves your computer.
-- **Crash safe.** The file commits every five minutes, so a frozen laptop costs minutes, not the meeting.
+- **Crash safe.** The file commits every five minutes, so a frozen laptop costs minutes, not the whole recording.
 - **Named for you.** Files look like `20260917-1132-google-meet-jac-mxgd-uap.mp4`. Passcodes in the URL are never written.
-- **Your voice, your choice.** Mute the recording microphone from the popup without touching the meeting’s mute.
+- **Your voice, your choice.** Mute the recording microphone from the popup without touching the page’s mute.
 - **Nothing to install besides Chrome.** No build step, no dependencies, plain JavaScript you can read in an afternoon.
 
 GoatMeet is not affiliated with Google, Microsoft, or Zoom.
@@ -37,12 +37,12 @@ GoatMeet requires Chrome 126 or later on Windows or macOS. Chrome on Linux does 
 
 ## First recording
 
-1. Open your meeting’s browser tab and click the GoatMeet icon.
+1. Open the tab you want to record and click the GoatMeet icon.
 2. Press **Start recording**.
 3. The first time, a new tab opens. Click **Allow and record**.
 4. Select your Videos folder. GoatMeet creates a `goatmeet` subfolder inside it.
 5. Approve microphone access if Chrome asks.
-6. The tab closes and the toolbar shows a red `REC` badge. Join the meeting in that tab.
+6. The tab closes and the toolbar shows a red `REC` badge. Carry on in that tab.
 
 The button always reads **Start recording**.
 GoatMeet checks folder and microphone access when you open the popup and every second after.
@@ -58,21 +58,21 @@ The extension cannot grant itself filesystem access.
 
 ## Recording workflow
 
-1. Open the meeting’s browser tab before joining the room.
+1. Open the tab you want to record.
 2. Click GoatMeet and press **Start recording**.
 3. Wait for **RECORDING** and the red **REC** badge.
-4. Join the meeting in that same tab.
+4. Do whatever you want to record in that same tab.
 5. At the end, click GoatMeet and press **Stop recording**.
 6. Wait for **SAVED**, then open the MP4 in your folder.
 
 You can close the popup, switch tabs, and keep using Chrome while recording.
 The recording follows the original tab across navigation within that tab.
-It does not follow a meeting into another tab, another window, or a desktop application.
-Choose the meeting provider’s browser option when it offers one.
+It does not follow the content into another tab, another window, or a desktop application.
+If an app offers a desktop and a browser version, choose the browser version so it runs in the tab.
 
 GoatMeet records one tab at a time.
 Closing the captured tab stops the capture and saves the recording.
-Leaving a meeting does not always close its tab. Press **Stop recording** when you are done.
+Finishing on the page does not always close its tab. Press **Stop recording** when you are done.
 
 ## Toolbar badge
 
@@ -112,7 +112,7 @@ Filenames use your computer’s local time:
 20260917-1132-chrome-meeting.mp4
 ```
 
-The pattern is `YYYYMMDD-HHmm-<service>-<meeting id>.mp4` when GoatMeet recognizes the meeting URL.
+The pattern is `YYYYMMDD-HHmm-<service>-<id>.mp4` when GoatMeet recognizes the tab’s URL.
 GoatMeet reads the URL once, when recording starts. It ignores query parameters, so embedded passcodes never reach the filename.
 Unknown services use `chrome-meeting` without an id.
 If the name exists, GoatMeet appends `-2`, `-3`, and so on. It never overwrites a previous recording.
@@ -139,15 +139,15 @@ GoatMeet mixes tab audio and your microphone into one audio track.
 It captures what the tab shows, including chat or captions inside the page.
 It does not produce separate participant tracks.
 
-**The meeting’s mute button does not mute GoatMeet’s microphone.**
+**A page’s own mute button does not mute GoatMeet’s microphone.**
 Use **Mute recording mic** in the popup to leave your voice out while keeping the tab audio.
 Disable **Include my microphone** in settings to record tab audio only.
-Use headphones to stop the meeting audio from leaking back into your microphone.
+Use headphones to stop the tab audio from leaking back into your microphone.
 
 ## Recording consent
 
 Recording a conversation is regulated in many countries and states.
-Some require the consent of every participant. GoatMeet does not notify participants and does not trigger the meeting provider’s recording indicator.
+Some require the consent of every participant. GoatMeet does not notify participants and does not trigger any recording indicator.
 You are responsible for informing participants and for following the law where you and they are located.
 
 ## Privacy
@@ -166,7 +166,7 @@ tests/              Node tests, run with node --test
 tests/browser/      a manual encoder check that runs in Chrome
 tests/e2e/          smoke test that drives a real Chrome over the DevTools protocol
 scripts/            check.mjs (syntax) and package.mjs (store zip)
-docs/               testing guide and store listing draft
+images/             the README banner
 ```
 
 Run the checks from the repository root. Node 22 or later is required.
@@ -180,7 +180,7 @@ npm run package
 `npm run package` writes `dist/goatmeet-<version>.zip` with `manifest.json` at the archive root, ready for the Chrome Web Store.
 
 Chrome APIs are not available in Node, so the tests load each page script into a `vm` context with fake `chrome`, `document`, and `navigator` objects.
-`npm run e2e` starts a real Chrome with the extension and checks every page and the encoder. See [docs/testing.md](docs/testing.md).
+`npm run e2e` starts a real Chrome with the extension and checks every page and the encoder.
 
 Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
