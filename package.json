@@ -1,6 +1,6 @@
 {
   "name": "goat-meet-recording",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "private": true,
   "description": "GoatMeet: a Chrome extension that records a meeting tab and your microphone to a local MP4.",
   "homepage": "https://github.com/thesimj/goat-meet-recording",

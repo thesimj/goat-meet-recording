@@ -5,6 +5,8 @@ Versions follow the `version` field in `extension/manifest.json`.
 
 ## [Unreleased]
 
+## [0.3.6] - 2026-09-17
+
 ### Changed
 
 - Generalized the documentation to recording any tab in Chrome, not only a meeting tab.
@@ -69,7 +71,8 @@ First public source release, prepared for the Chrome Web Store.
 
 Internal version before the public repository. Recorded a meeting tab plus microphone to an H.264/AAC MP4 with five-minute checkpoints, a combined access flow, meeting-aware filenames, and a status badge on the toolbar.
 
-[Unreleased]: https://github.com/thesimj/goat-meet-recording/compare/v0.3.5...HEAD
+[Unreleased]: https://github.com/thesimj/goat-meet-recording/compare/v0.3.6...HEAD
+[0.3.6]: https://github.com/thesimj/goat-meet-recording/releases/tag/v0.3.6
 [0.3.5]: https://github.com/thesimj/goat-meet-recording/releases/tag/v0.3.5
 [0.3.4]: https://github.com/thesimj/goat-meet-recording/releases/tag/v0.3.4
 [0.3.3]: https://github.com/thesimj/goat-meet-recording/releases/tag/v0.3.3
